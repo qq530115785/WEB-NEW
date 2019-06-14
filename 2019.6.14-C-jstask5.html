@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>葡萄藤PPT</title>
+
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/reveal.css">
+
+    <!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/theme/ptt.css">
+
+    <!-- syntax highlighting 代码高亮主题 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/lib/reveal/css/zenburn.css">
+
+    <style>
+        .float {
+            float: left;
+        }
+
+        p.font {
+            text-align: left;
+        }
+    </style>
+    <!-- 打印和PDF输出样式 -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            'https://ptteng.github.io/PPT/css/reveal/print/pdf.css' : '../css/reveal/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<img src="img/2018-11-16-A-css01/logo.png" alt="" usemap="#pttmap" class="base-logo" style="visibility: hidden">
+<map name="pttmap">
+    <area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com/" alt="" target="_blank">
+</map>
+<div class="reveal slide center" role="application" data-transition-speed="default" data-background-transition="fade">
+            <div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.794571);">
+                <section class="present" style="top: 234px; display: block;">
+                    <h3>什么是AJAX？</h3>
+
+                    <p style="text-align: center;">分享人：张嘉豪</p>
+
+                </section>
+                <section class="future" style="top: 3px; display: block;" hidden="" aria-hidden="true">
+                    <p>目录</p>
+                    <p>1. 背景介绍</p>
+                    <p>2. 知识剖析</p>
+                    <p>3. 常见问题</p>
+                    <p>4. 解决方案</p>
+                    <p>5. 编码实战</p>
+                    <p>6. 扩展思考</p>
+                    <p>7. 参考文献</p>
+                    <p>8. 更多讨论</p>
+                </section>
+                <section class="future" style="top: 267px; display: block;" hidden="" aria-hidden="true">
+                    <h3>一、背景介绍</h3>
+                </section>
+                <section class="future" style="top: 190px; display: none;" hidden="" aria-hidden="true">
+                    <p>AJAX = 异步 JavaScript 和 XML。<br>
+
+                        AJAX 是一种用于创建快速动态网页的技术。
+
+                        通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
+                        传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+                        AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
+
+                        AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。
+
+                        AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>二、知识剖析</h3>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>
+                        Ajax就是用 JS 发起一个请求，并得到服务器返回的内容。这跟以前的技术最大的不同点在于「页面没有刷新」，改善了用户体验，仅此而已。<br>
+
+                        那么我们如何发送一个ajax请求呢？<br>
+
+                        1. 创建一个对象 XMLHttpRequest
+
+                        var xhr = new XMLHttpRequest();为了支持ie6以及更早的版本，要 var xhr=new ActiveXObject()<br>
+
+                        2.监听请求成功后的状态变化<br>
+
+                        3.设置请求参数<br>
+
+                        4.发起请求<br>
+
+                        5.操作DOM，实现动态局部刷新<br>
+                    </p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>而什么是一个完整的HTTP请求呢？</p>
+                    <p>1.建立tcp链接</p>
+                    <p>2.web浏览器向web服务器发送请求命令</p>
+                    <p>3.web浏览器发送请求头信息</p>
+                    <p>4.web服务器应答</p>
+                    <p>5.web服务器发送应答头信息</p>
+                    <p>6.web服务器向浏览器发送数据</p>
+                    <p>7.web服务器关闭tcp链接</p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>一个完整的请求由四部分组成</p>
+                    <p>1.HTTP请求的方法或动作，比如是GET还是POST请求</p>
+                    <p>2.正在请求的url，总得知道请求的地址是什么吧？</p>
+                    <p>3.请求头，包含一些客户端环境问题，身份验证信息等</p>
+                    <p>4.请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p style="float: left">接下来，我们就要监听请求成功的状态变化了</p>
+
+                    <p style="float: left">onreadystatechange：用来监听readyState的变化的</p>
+
+                    <p style="float: left">readyState：表示当前请求的后台的状态</p>
+
+                    <p style="float: left">status：表示处理的结果</p>
+
+                </section>
+                <section class="future" style="top: 267px;display: none;"  hidden="" aria-hidden="true">
+                    <p style="float: left">readyState：表示当前请求的后台的状态</p>
+
+                    <p style="float: left">0：请求未初始化(还没有调用open())</p>
+
+                    <p style="float: left">1：请求已经建立，但是还没有发送(还没有调用send())</p>
+
+                    <p style="float: left">2：请求已经发送，正在处理中</p>
+
+                    <p style="float: left">3：请求正在处理中，通常响应中已经有部分数据可以用了</p>
+
+                    <p style="float: left">4：响应已经完成，可以获取并使用服务器的响应了</p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>
+                        status：表示处理的结果(状态码)<br>
+
+                        1XX，表示收到请求正在处理中<br>
+
+                        status == 200 是表示处理的结果是OK的<br>
+
+                        状态码:200到300是指服务端正常返回<br>
+
+                        304:如果网页自请求者上次请求后再也没有更改过，应将服务器配置为返回此响应，进而节省带宽和开销<br>
+
+                        404:找不到对象（404 not found)<br>
+
+                        503:服务器超时<br>
+                    </p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>三、常见问题</h3>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>使用post提交需要忘记content-type的问题</p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>四、解决办法</h3>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <p>xhr.open("post", "/carrots-admin-ajax/a/login",true);<br>
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");<br>
+                        xhr.send("name=" + name + "&pwd=" + code);<br>
+
+                        Content-type要作为请求头放在open和send之间<br>
+                    </p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>五、编码实战</h3>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>六、拓展思考</h3>
+                </section>
+                <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+                <h4>Ajax有什么优点和缺点？</h4>
+            </section>
+                <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+                    <p>
+                        优点：<br>
+                        1。减轻服务器的负担，提升站点的性能<br>
+                        2。无刷新更新页面，减少用户实际和心理等待时间<br>
+                        3。更好的用户体验<br>
+                        4. 也可以把以前的一些服务器负担的工作转嫁到服务器，利用客户端闲置的处理能力来进行处理，减轻服务器和宽带的负担，节约空间和宽带租用成本<br>
+                        5.Ajax是基于标准化并被广泛支持的技术，并且不需要插件和下载小程序<br>
+                        6.Ajax使用Web中的界面与应用分离（也可以说是数据和呈现分离），而在以前两者是没有清晰的界限的，数据与呈现分离，有利于分工合作，减少非技术人员对页面的修改造成的Web应用程序错误，提高效率，也更加适用于现在的发布系统。<br>
+                    </p>
+                </section>
+                <section class="future" style="top: 97.5px; display: none;" hidden="" aria-hidden="true">
+                    <p>
+                        缺点：<br>
+                        1.一些手持设备（如手机、PDA等）现在还不能很好的支持Ajax<br>
+                        2.用Javascript做的Ajax引擎，Javascript的兼容性和Debug都是让人头疼的事<br>
+                        3.Ajax的无刷新重载，由于页面的变化没有刷新重载那么明显，所以容易给用户带来困扰----用户不清楚现在的数据时心得还是已经更新过的；现在的解决方式有在相关位置提示、数据更新的区域设计的比较明显、数据更新后给用户提示等。<br>
+                        4.对流媒体的支持没有Flash、Java Applet好<br>
+                    </p>
+                </section>
+                    <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>七、参考文献</h3>
+                </section>
+                <section class="future" style="top: 178px; display: none;" hidden="" aria-hidden="true">
+                    <p>参考：<a href="https://blog.csdn.net/bradmatt/article/details/80399791">博客</a></p>
+                </section>
+                <section class="future" style="top: 267px; display: none;" hidden="" aria-hidden="true">
+                    <h3>八、更多讨论</h3>
+                </section>
+                <section class="future" style="top: 202.5px; display: none;" hidden="" aria-hidden="true">
+                    <h3>感谢观看</h3>
+                </section>
+            </div>
+        <div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><button class="navigate-left" aria-label="previous slide"></button><button class="navigate-right enabled" aria-label="next slide"></button><button class="navigate-up" aria-label="above slide"></button><button class="navigate-down" aria-label="below slide"></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe=""></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+    【js-task-1】简述JS中执行环境与作用域的关系
+                    分享人：张嘉豪
+                </div></div>
+<script src="https://ptteng.github.io/PPT/lib/reveal/js/head.min.js"></script>
+<script src="https://ptteng.github.io/PPT/lib/reveal/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                history: true,
+                dependencies: [{
+                    src: 'https://ptteng.github.io/PPT/plugin/markdown/marked.js'
+                },
+                    {
+                        src: 'https://ptteng.github.io/PPT/plugin/markdown/markdown.js'
+                    },
+                    {
+                        src: 'https://ptteng.github.io/PPT/plugin/notes/notes.js',
+                        async: true
+                    },
+                    {
+                        src: 'https://ptteng.github.io/PPT/plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }
+                ]
+            });
+        </script>
+    
+    </body></html>
